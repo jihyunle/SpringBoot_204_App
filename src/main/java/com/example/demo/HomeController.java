@@ -12,7 +12,7 @@ import javax.validation.Valid;
 public class HomeController {
 
     @GetMapping("/carform") // get request create an empty object
-    public String loadCarForm(Model model){
+    public String loadCarForm(Model model) {
         model.addAttribute("car", new Car());
         return "carform";
 
@@ -20,8 +20,8 @@ public class HomeController {
 
 
     @PostMapping("/carform") // post request validates the input
-    public String processCarForm(@Valid Car car, BindingResult result){
-        if (result.hasErrors()){
+    public String processCarForm(@Valid Car car, BindingResult result) {
+        if (result.hasErrors()) {
             return "carform";
         }
         return "carconfirm";
